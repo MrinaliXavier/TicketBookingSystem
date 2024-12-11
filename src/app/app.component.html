@@ -1,0 +1,44 @@
+<div class="container mt-4">
+  <h1 class="text-center">Ticket Booking Simulator</h1>
+
+  <!-- Nav Pills for Tab Navigation -->
+  <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link rounded-5" [ngClass]="{'active': activeTab === 'config'}" (click)="setActiveTab('config')" type="button">Configuration</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link rounded-5" [ngClass]="{'active': activeTab === 'ticket'}" (click)="setActiveTab('ticket')" type="button">Ticket Display</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link rounded-5" [ngClass]="{'active': activeTab === 'control'}" (click)="setActiveTab('control')" type="button">Control Panel</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link rounded-5" [ngClass]="{'active': activeTab === 'log'}" (click)="setActiveTab('log')" type="button">Logs</button>
+    </li>
+  </ul>
+
+  <!-- Tab Content -->
+  <div class="tab-content mt-3" id="pillNavContent">
+
+    <!-- Configuration Form Tab -->
+    <div class="" *ngIf="activeTab === 'config'">
+      <app-configuration-form (configChange)="onConfigurationChange($event)"></app-configuration-form>
+    </div>
+
+    <!-- Ticket Display Tab -->
+    <div *ngIf="activeTab === 'ticket'">
+      <app-ticket-display></app-ticket-display>
+    </div>
+
+    <!-- Control Panel Tab -->
+    <div *ngIf="activeTab === 'control'">
+      <app-control-panel (startSystem)="onStartSystem()" (stopSystem)="onStopSystem()"></app-control-panel>
+    </div>
+
+    <!-- Log Display Tab -->
+    <div *ngIf="activeTab === 'log'">
+      <app-log-display></app-log-display>
+    </div>
+
+  </div>
+</div>
