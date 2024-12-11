@@ -13,6 +13,14 @@
       </div>
 
       <div class="mb-3">
+        <label for="poolCapacity" class="form-label">Pool Capacity</label>
+        <input type="number" id="poolCapacity" [(ngModel)]="poolCapacity" name="poolCapacity" class="form-control" required />
+        <div class="invalid-feedback">
+          Please enter the maximum capacity of tickets in pool.
+        </div>
+      </div>
+
+      <div class="mb-3">
         <label for="ticketReleaseRate" class="form-label">Ticket Release Rate</label>
         <input type="number" id="ticketReleaseRate" [(ngModel)]="ticketReleaseRate" name="ticketReleaseRate" class="form-control" required />
         <div class="invalid-feedback">
