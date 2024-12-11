@@ -12,6 +12,8 @@ export class ConfigurationFormComponent {
   ticketReleaseRate: number = 5;
   customerRetrievalRate: number = 3;
   vendorCount: number = 3;
+  customerCount: number = 2;
+  
 
   @Output() configChange = new EventEmitter<any>();
 
@@ -21,7 +23,9 @@ export class ConfigurationFormComponent {
       poolCapacity: this.poolCapacity,
       ticketReleaseRate: this.ticketReleaseRate,
       customerRetrievalRate: this.customerRetrievalRate,
-      vendorCount: this.vendorCount
+      vendorCount: this.vendorCount,
+      customerCount: this.customerCount
+
     };
     this.configChange.emit(config);
   }
