@@ -10,6 +10,7 @@ export class ConfigurationFormComponent {
   totalTickets: number = 100;
   ticketReleaseRate: number = 5;
   customerRetrievalRate: number = 3;
+  vendorCount: number = 3;
 
   @Output() configChange = new EventEmitter<any>();
 
@@ -17,7 +18,8 @@ export class ConfigurationFormComponent {
     const config = {
       totalTickets: this.totalTickets,
       ticketReleaseRate: this.ticketReleaseRate,
-      customerRetrievalRate: this.customerRetrievalRate
+      customerRetrievalRate: this.customerRetrievalRate,
+      vendorCount: this.vendorCount
     };
     this.configChange.emit(config);
   }

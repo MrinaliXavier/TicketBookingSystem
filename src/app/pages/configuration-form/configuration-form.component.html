@@ -28,6 +28,14 @@
         </div>
       </div>
 
+      <div class="mb-3">
+        <label for="vendorCount" class="form-label">Vendor Count</label>
+        <input type="number" id="vendorCount" [(ngModel)]="vendorCount" name="vendorCount" class="form-control" required />
+        <div class="invalid-feedback">
+          Please enter the customer retrieval rate.
+        </div>
+      </div>
+
       <button type="submit" class="btn btn-primary">Save Configuration</button>
     </form>
   </div>
